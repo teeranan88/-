@@ -1,1090 +1,230 @@
 <!DOCTYPE html>
-<html lang="th" class="scroll-smooth">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEERANAN - Academic Portfolio Showcase | North Bangkok University</title>
-    
+    <title>Portfolio Hub | ธีรนันท์ ม้าสุวรรณ</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <!-- Google Fonts: Prompt -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Prompt', sans-serif;
-            background-color: #f4f4f0;
-            background-image: radial-gradient(#000000 1.5px, transparent 1.5px);
-            background-size: 24px 24px;
-        }
-
-        .font-display {
-            font-family: 'Space Grotesk', 'Prompt', sans-serif;
-        }
-
-        /* Neo-Brutalist core utility classes */
-        .neo-box {
-            border: 3.5px solid #000000;
-            box-shadow: 6px 6px 0px #000000;
-            transition: all 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-
-        .neo-box-sm {
-            border: 3px solid #000000;
-            box-shadow: 4px 4px 0px #000000;
-        }
-
-        .neo-btn {
-            border: 3px solid #000000;
-            box-shadow: 4px 4px 0px #000000;
-            font-weight: 800;
-            transition: all 0.12s ease-in-out;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .neo-btn:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 7px 7px 0px #000000;
-        }
-
-        .neo-btn:active {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px #000000;
-        }
-
-        .neo-card-hover {
-            transition: all 0.2s ease-in-out;
-        }
-
-        .neo-card-hover:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 10px 10px 0px #000000;
-        }
-
-        /* Typography Stroke Effects */
-        .stroke-text {
-            -webkit-text-stroke: 2.5px #000000;
-            color: transparent;
-        }
-
-        .stroke-text-white {
-            -webkit-text-stroke: 2.5px #000000;
-            color: #ffffff;
-        }
-
-        /* Striped Hatch Patterns */
-        .bg-hatch-black {
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(0, 0, 0, 0.08),
-                rgba(0, 0, 0, 0.08) 10px,
-                transparent 10px,
-                transparent 20px
-            );
-        }
-
-        .bg-hazard {
-            background: repeating-linear-gradient(
-                -45deg,
-                #FFE600,
-                #FFE600 15px,
-                #000000 15px,
-                #000000 30px
-            );
-        }
-
-        /* Infinite Ticker Animation */
-        @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .animate-ticker {
-            display: inline-flex;
-            white-space: nowrap;
-            animation: marquee 24s linear infinite;
-        }
-
-        .animate-ticker:hover {
-            animation-play-state: paused;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 12px;
-            height: 12px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f4f4f0;
-            border-left: 3px solid #000;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #FFE600;
-            border: 3px solid #000;
-            border-radius: 0px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #FF007A;
-        }
+        body { font-family: 'Prompt', sans-serif; }
     </style>
 </head>
-<body class="text-black antialiased selection:bg-[#FFE600] selection:text-black min-h-screen flex flex-col justify-between">
+<body class="bg-gradient-to-br from-indigo-50 via-pink-50 to-purple-50 min-h-screen text-slate-700 antialiased pb-16">
 
-    <!-- Top Announcement / University Badge Nav -->
-    <header class="sticky top-0 z-40 bg-[#f4f4f0] border-b-4 border-black px-4 py-3">
-        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+    <!-- Header Section -->
+    <header class="relative overflow-hidden bg-white/80 backdrop-blur-md border-b border-pink-100 shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-6 md:py-8 flex flex-col md:flex-row items-center justify-between gap-6">
             
-            <!-- Student & University Brand -->
-            <div class="flex items-center gap-3">
-                <div class="bg-[#FFE600] px-3 py-1 font-display font-black text-lg border-2 border-black shadow-[3px_3px_0px_#000] rotate-[-1deg]">
-                    🎓 NBU
-                </div>
-                <div>
-                    <h1 class="font-black text-lg md:text-xl leading-tight tracking-tight uppercase">
-                        TEERANAN <span class="text-[#FF007A] font-extrabold text-sm md:text-base">[PORTFOLIO HUB]</span>
-                    </h1>
-                    <p class="text-xs font-bold text-gray-700 hidden sm:block">North Bangkok University • Academic Showcase</p>
-                </div>
-            </div>
-
-            <!-- Header Action Controls -->
-            <div class="flex items-center gap-2 md:gap-3 flex-wrap">
-                <!-- Presentation Mode Trigger -->
-                <button onclick="openPresentationModal()" class="neo-btn bg-[#A3FF12] text-black px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm flex items-center gap-2">
-                    <i class="fa-solid fa-chalkboard-user text-base"></i>
-                    <span>สคริปต์นำเสนออาจารย์</span>
-                </button>
-
-                <!-- Audio Toggle -->
-                <button id="soundToggleBtn" onclick="toggleSound()" class="neo-btn bg-white text-black px-2.5 py-1.5 md:px-3 md:py-2 text-xs md:text-sm" title="เปิด/ปิด เสียงเอฟเฟกต์">
-                    <i class="fa-solid fa-volume-high" id="soundIcon"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero / Main Header Banner Section -->
-    <section class="max-w-7xl mx-auto px-4 pt-8 pb-4 w-full">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-            
-            <!-- Left Headline Box -->
-            <div class="lg:col-span-8 neo-box bg-white p-6 md:p-8 relative overflow-hidden flex flex-col justify-between">
-                <!-- Background decorative crosshairs -->
-                <div class="absolute top-3 right-3 text-2xl font-black opacity-30 select-none">✦ ✦ ✦</div>
-                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-[#00E5FF] rounded-full border-4 border-black select-none opacity-40"></div>
-
-                <div>
-                    <div class="inline-block bg-[#FF007A] text-white font-black text-xs md:text-sm px-3 py-1 border-2 border-black shadow-[3px_3px_0px_#000] mb-4 uppercase tracking-wider">
-                        ✨ ACADEMIC WORK COLLECTION 2026
-                    </div>
-                    
-                    <h1 class="font-display font-black text-4xl sm:text-6xl md:text-7xl leading-none uppercase tracking-tighter mb-2">
-                        WEB DESIGN
-                    </h1>
-                    <h2 class="font-display font-black text-4xl sm:text-6xl md:text-7xl leading-none uppercase tracking-tighter stroke-text mb-4">
-                        SHOWCASE
-                    </h2>
-
-                    <p class="text-sm md:text-base font-semibold text-gray-800 max-w-2xl leading-relaxed bg-[#f4f4f0] p-3 border-2 border-black rounded-sm shadow-[2px_2px_0px_#000]">
-                        รวบรวมชิ้นงานโปรเจกต์เว็บแอปพลิเคชัน, Google Sites, มินิเกม และระบบคำนวณ พัฒนาโดย <strong class="text-[#FF007A] underline">ธีรนันท์</strong> นักศึกษามหาวิทยาลัยนอร์ทกรุงเทพ สำหรับการนำเสนอและตรวจประเมินรายวิชา
-                    </p>
-                </div>
-
-                <!-- Stats / Quick Info Bar -->
-                <div class="grid grid-cols-3 gap-2 sm:gap-4 mt-6 pt-6 border-t-3 border-black">
-                    <div class="bg-[#FFE600] p-2 sm:p-3 border-2 border-black text-center shadow-[3px_3px_0px_#000]">
-                        <div class="font-black font-display text-xl sm:text-2xl">7</div>
-                        <div class="text-[10px] sm:text-xs font-bold uppercase">PROJECTS</div>
-                    </div>
-                    <div class="bg-[#A3FF12] p-2 sm:p-3 border-2 border-black text-center shadow-[3px_3px_0px_#000]">
-                        <div class="font-black font-display text-xl sm:text-2xl">100%</div>
-                        <div class="text-[10px] sm:text-xs font-bold uppercase">LIVE READY</div>
-                    </div>
-                    <div class="bg-[#00E5FF] p-2 sm:p-3 border-2 border-black text-center shadow-[3px_3px_0px_#000]">
-                        <div class="font-black font-display text-xl sm:text-2xl">NBU</div>
-                        <div class="text-[10px] sm:text-xs font-bold uppercase">STUDENT</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Profile & Quick Actions Box -->
-            <div class="lg:col-span-4 neo-box bg-[#FF7A00] p-6 text-black flex flex-col justify-between relative overflow-hidden">
-                <div class="relative z-10">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="bg-black text-white font-black text-xs px-2.5 py-1 uppercase tracking-widest border border-white">DEVELOPER</span>
-                        <span class="font-black text-2xl">⚡</span>
-                    </div>
-
-                    <div class="bg-white border-3 border-black p-4 mb-4 shadow-[4px_4px_0px_#000]">
-                        <div class="flex items-center gap-3">
-                            <div class="w-14 h-14 bg-[#FFE600] border-2 border-black rounded-full flex items-center justify-center font-black text-2xl shadow-[2px_2px_0px_#000]">
-                                TN
-                            </div>
-                            <div>
-                                <h3 class="font-black text-lg leading-tight">TEERANAN</h3>
-                                <p class="text-xs font-bold text-gray-600">North Bangkok University</p>
-                                <p class="text-[11px] font-extrabold text-[#FF007A] mt-0.5">Faculty of Information Tech</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2 text-xs font-bold bg-black text-white p-3 border-2 border-black shadow-[3px_3px_0px_#fff]">
-                        <p class="flex items-center gap-2">
-                            <i class="fa-solid fa-circle-check text-[#A3FF12]"></i>
-                            <span>GitHub Pages Hosted Works</span>
-                        </p>
-                        <p class="flex items-center gap-2">
-                            <i class="fa-solid fa-circle-check text-[#A3FF12]"></i>
-                            <span>Google Sites Academic Pages</span>
-                        </p>
-                        <p class="flex items-center gap-2">
-                            <i class="fa-solid fa-circle-check text-[#A3FF12]"></i>
-                            <span>Interactive Web Apps & Games</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="mt-4 pt-4 border-t-2 border-black z-10 flex gap-2">
-                    <button onclick="scrollToProjects()" class="w-full neo-btn bg-[#FFE600] py-2.5 px-3 text-xs md:text-sm flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-arrow-down-long"></i>
-                        <span>สำรวจผลงานทั้งหมด</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tilted Yellow Marquee / Ticker Ribbon -->
-    <div class="w-full my-6 overflow-hidden py-3 bg-[#FFE600] border-y-4 border-black rotate-[-1deg] shadow-[0px_4px_0px_#000]">
-        <div class="animate-ticker font-display font-black text-lg md:text-2xl tracking-wider uppercase flex items-center gap-6">
-            <span>✦ GRAPHIC DESIGN</span>
-            <span>✦ WEB DEVELOPMENT</span>
-            <span>✦ CREATIVE DEVELOPER</span>
-            <span>✦ TEERANAN PORTFOLIO HUB</span>
-            <span>✦ NORTH BANGKOK UNIVERSITY</span>
-            <span>✦ BMI CALCULATOR</span>
-            <span>✦ OPEN HOUSE WEBSITE</span>
-            <span>✦ MINI GAME PROJECT</span>
-            <span>✦ GRAPHIC DESIGN</span>
-            <span>✦ WEB DEVELOPMENT</span>
-            <span>✦ CREATIVE DEVELOPER</span>
-            <span>✦ TEERANAN PORTFOLIO HUB</span>
-            <span>✦ NORTH BANGKOK UNIVERSITY</span>
-            <span>✦ BMI CALCULATOR</span>
-            <span>✦ OPEN HOUSE WEBSITE</span>
-            <span>✦ MINI GAME PROJECT</span>
-        </div>
-    </div>
-
-    <!-- Project Filter Bar & Controls -->
-    <section id="projects-section" class="max-w-7xl mx-auto px-4 py-4 w-full">
-        <div class="neo-box bg-white p-4 md:p-5 flex flex-col md:flex-row items-center justify-between gap-4">
-            
-            <!-- Category Filter Buttons -->
-            <div class="flex items-center gap-2 flex-wrap w-full md:w-auto" id="filterBtnGroup">
-                <button onclick="filterCategory('ALL')" class="filter-btn neo-btn bg-[#FFE600] text-black px-3.5 py-1.5 text-xs sm:text-sm active-filter">
-                    ทั้งหมด ALL (7)
-                </button>
-                <button onclick="filterCategory('Web Apps')" class="filter-btn neo-btn bg-white text-black px-3.5 py-1.5 text-xs sm:text-sm">
-                    🚀 Web Apps (3)
-                </button>
-                <button onclick="filterCategory('Google Sites')" class="filter-btn neo-btn bg-white text-black px-3.5 py-1.5 text-xs sm:text-sm">
-                    🌐 Google Sites (2)
-                </button>
-                <button onclick="filterCategory('Games')" class="filter-btn neo-btn bg-white text-black px-3.5 py-1.5 text-xs sm:text-sm">
-                    🎮 Games (1)
-                </button>
-                <button onclick="filterCategory('In Progress')" class="filter-btn neo-btn bg-white text-black px-3.5 py-1.5 text-xs sm:text-sm">
-                    ⏳ In Progress (1)
-                </button>
-            </div>
-
-            <!-- Search Input Box -->
-            <div class="relative w-full md:w-72">
-                <input 
-                    type="text" 
-                    id="searchInput" 
-                    oninput="handleSearch()"
-                    placeholder="ค้นหาชื่อโปรเจกต์ หรือเทคโนโลยี..." 
-                    class="w-full bg-[#f4f4f0] border-3 border-black px-3 py-2 pl-9 text-xs sm:text-sm font-bold focus:outline-none focus:bg-white focus:shadow-[3px_3px_0px_#000] transition-all"
-                >
-                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-600 text-xs"></i>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Card Grid Container -->
-    <main class="max-w-7xl mx-auto px-4 py-6 w-full flex-grow">
-        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Cards will be populated dynamically via JS -->
-        </div>
-
-        <!-- Empty State Message -->
-        <div id="emptyState" class="hidden neo-box bg-white p-12 text-center my-8">
-            <div class="text-5xl mb-3">🔍</div>
-            <h3 class="font-black text-xl mb-1">ไม่พบผลงานที่ตรงกับการค้นหา</h3>
-            <p class="text-sm font-semibold text-gray-600 mb-4">ลองเปลี่ยนคำค้นหา หรือเลือกหมวดหมู่ "ทั้งหมด ALL"</p>
-            <button onclick="filterCategory('ALL')" class="neo-btn bg-[#FFE600] px-4 py-2 text-sm">
-                แสดงผลงานทั้งหมด
-            </button>
-        </div>
-    </main>
-
-    <!-- Presentation Assistant Modal (สำหรับนำเสนออาจารย์) -->
-    <div id="presentationModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 hidden">
-        <div class="neo-box bg-white w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden animate-fadeIn">
-            
-            <!-- Modal Header -->
-            <div class="bg-[#A3FF12] border-b-3 border-black p-4 flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <span class="bg-black text-white font-black text-xs px-2.5 py-1 border border-black">PRESENTER</span>
-                    <h3 class="font-black text-lg md:text-xl uppercase tracking-tight">สคริปต์และคู่มือนำเสนอส่งอาจารย์</h3>
-                </div>
-                <button onclick="closePresentationModal()" class="neo-btn bg-white hover:bg-[#FF007A] hover:text-white w-8 h-8 flex items-center justify-center text-lg">
-                    ✕
-                </button>
-            </div>
-
-            <!-- Modal Content Body -->
-            <div class="p-4 md:p-6 overflow-y-auto space-y-6 flex-grow">
-                
-                <!-- Student Editable Info Banner -->
-                <div class="neo-box bg-[#FFE600] p-4 relative">
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                        <div>
-                            <span class="text-xs font-black uppercase bg-black text-white px-2 py-0.5">STUDENT PROFILE</span>
-                            <div class="flex items-center gap-2 mt-1">
-                                <h4 class="font-black text-lg" id="scriptStudentName">นายธีรนันท์ (TEERANAN)</h4>
-                                <button onclick="editStudentInfo()" class="text-xs underline font-bold text-blue-900 hover:text-black">
-                                    [แก้ไขข้อมูล]
-                                </button>
-                            </div>
-                            <p class="text-xs font-bold text-gray-800" id="scriptStudentSub">นักศึกษา มหาวิทยาลัยนอร์ทกรุงเทพ (North Bangkok University)</p>
-                        </div>
-                        <div class="bg-white border-2 border-black p-2 text-center text-xs font-black shadow-[2px_2px_0px_#000]">
-                            ⏱️ คำแนะนำเวลาพูด: 3 - 5 นาที
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stopwatch Presentation Timer -->
-                <div class="neo-box bg-[#f4f4f0] p-4 flex flex-wrap items-center justify-between gap-4">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-stopwatch text-2xl text-[#FF007A]"></i>
-                        <div>
-                            <div class="text-xs font-black uppercase text-gray-600">ตัวจับเวลานำเสนอ (Presentation Timer)</div>
-                            <div class="font-display font-black text-3xl tracking-wider" id="timerDisplay">00:00</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <button onclick="startTimer()" class="neo-btn bg-[#A3FF12] px-3 py-1.5 text-xs">▶️ เริ่มจับเวลา</button>
-                        <button onclick="pauseTimer()" class="neo-btn bg-[#FFE600] px-3 py-1.5 text-xs">⏸️ พัก</button>
-                        <button onclick="resetTimer()" class="neo-btn bg-white px-3 py-1.5 text-xs">🔄 รีเซ็ต</button>
-                    </div>
-                </div>
-
-                <!-- Speech Script Steps -->
-                <div class="space-y-4">
-                    <h4 class="font-black text-base border-b-2 border-black pb-1 flex items-center gap-2">
-                        <span>💬 บทพูดนำเสนอตามขั้นตอน (Step-by-step Speech Script)</span>
-                    </h4>
-
-                    <!-- Step 1 -->
-                    <div class="neo-box-sm bg-white p-4">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="bg-[#00E5FF] font-black text-xs px-2 py-0.5 border border-black">ขั้นตอนที่ 1: การกล่าวทักทายและแนะนำตัว</span>
-                            <span class="text-xs font-extrabold text-gray-500">~ 30 วินาที</span>
-                        </div>
-                        <p class="text-xs sm:text-sm font-semibold leading-relaxed bg-[#f4f4f0] p-3 border border-black">
-                            "สวัสดีครับ/ค่ะ อาจารย์และเพื่อนๆ ทุกคน ผมชื่อ <strong>[ธีรนันท์]</strong> นักศึกษามหาวิทยาลัยนอร์ทกรุงเทพ วันนี้ขออนุญาตนำเสนอ <strong>Web Design Showcase Portfolio</strong> ซึ่งเป็นเว็บไซต์คลังรวบรวมชิ้นงานและโปรเจกต์ภาคปฏิบัติทั้งหมดที่ได้จัดทำตลอดภาคเรียนครับ"
-                        </p>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="neo-box-sm bg-white p-4">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="bg-[#FFE600] font-black text-xs px-2 py-0.5 border border-black">ขั้นตอนที่ 2: ภาพรวมสไตล์เว็บไซต์ Hub</span>
-                            <span class="text-xs font-extrabold text-gray-500">~ 45 วินาที</span>
-                        </div>
-                        <p class="text-xs sm:text-sm font-semibold leading-relaxed bg-[#f4f4f0] p-3 border border-black">
-                            "ตัวเว็บไซต์หลักนี้ถูกออกแบบในสไตล์ <strong>Neo-Brutalism</strong> เน้นความทันสมัย ลายเส้นขอบหนา และสีสัน High-contrast เพื่อความโดดเด่น มีฟังก์ชันกรองหมวดหมู่ผลงาน ทั้ง Web Applications, Google Sites และ Mini Games พร้อมระบบ Interactive Live Preview เพื่อให้อาจารย์ทดลองใช้งานได้ทันทีครับ"
-                        </p>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="neo-box-sm bg-white p-4">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="bg-[#FF007A] text-white font-black text-xs px-2 py-0.5 border border-black">ขั้นตอนที่ 3: ไฮไลต์ชิ้นงานสำคัญ (7 Projects)</span>
-                            <span class="text-xs font-extrabold text-gray-500">~ 2-3 นาที</span>
-                        </div>
-                        <ul class="text-xs sm:text-sm font-semibold space-y-2 text-gray-800">
-                            <li class="bg-[#f4f4f0] p-2 border border-black">
-                                🔹 <strong>Google Sites Home & Portfolio:</strong> เว็บไซต์แนะนำตัวและแฟ้มสะสมผลงานวิชาการบนระบบ Google Sites
-                            </li>
-                            <li class="bg-[#f4f4f0] p-2 border border-black">
-                                🔹 <strong>BMI Calculator Web App:</strong> แอปคำนวณดัชนีมวลกาย ประมวลผลสุขภาพด้วย JavaScript
-                            </li>
-                            <li class="bg-[#f4f4f0] p-2 border border-black">
-                                🔹 <strong>Open House Portal:</strong> เว็บไซต์ประชาสัมพันธ์กิจกรรมเปิดบ้านมหาวิทยาลัย
-                            </li>
-                            <li class="bg-[#f4f4f0] p-2 border border-black">
-                                🔹 <strong>Mini Game Project & Web -13:</strong> มินิเกมโต้ตอบและเว็บแอปพลิเคชันทดลอง นำขึ้นระบบออนไลน์ด้วย GitHub Pages
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Step 4 -->
-                    <div class="neo-box-sm bg-white p-4">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="bg-[#A3FF12] font-black text-xs px-2 py-0.5 border border-black">ขั้นตอนที่ 4: สรุปและเปิดโอกาสซักถาม</span>
-                            <span class="text-xs font-extrabold text-gray-500">~ 30 วินาที</span>
-                        </div>
-                        <p class="text-xs sm:text-sm font-semibold leading-relaxed bg-[#f4f4f0] p-3 border border-black">
-                            "จากการทำโปรเจกต์ทั้งหมดนี้ ทำให้ผมได้พัฒนาทักษะด้าน Web Development, UI/UX Design และการปรับแต่ง GitHub Pages ให้ใช้งานได้จริงครับ ขอขอบพระคุณอาจารย์อย่างยิ่ง และยินดีรับฟังคำแนะนำเพื่อนำไปพัฒนาต่อครับ ขอบคุณครับ"
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Interactive Presentation Checklist -->
-                <div class="neo-box bg-[#FFE600]/30 p-4 border-2 border-black">
-                    <h4 class="font-black text-sm mb-3 uppercase tracking-wider flex items-center gap-2">
-                        <span>✅ เช็กลิสต์ขณะนำเสนอหน้าชั้นเรียน</span>
-                    </h4>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-extrabold">
-                        <label class="flex items-center gap-2 cursor-pointer bg-white p-2 border border-black">
-                            <input type="checkbox" class="w-4 h-4 accent-[#FF007A]">
-                            <span>1. เปิดหน้า Web Showcase รวมผลงาน</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer bg-white p-2 border border-black">
-                            <input type="checkbox" class="w-4 h-4 accent-[#FF007A]">
-                            <span>2. ทดสอบปุ่มกรองหมวดหมู่ (Filter)</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer bg-white p-2 border border-black">
-                            <input type="checkbox" class="w-4 h-4 accent-[#FF007A]">
-                            <span>3. กด Preview หรือสาธิต BMI App</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer bg-white p-2 border border-black">
-                            <input type="checkbox" class="w-4 h-4 accent-[#FF007A]">
-                            <span>4. สาธิต Mini Game Project</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer bg-white p-2 border border-black">
-                            <input type="checkbox" class="w-4 h-4 accent-[#FF007A]">
-                            <span>5. นำเสนอ Google Sites ประวัติส่วนตัว</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer bg-white p-2 border border-black">
-                            <input type="checkbox" class="w-4 h-4 accent-[#FF007A]">
-                            <span>6. ตอบคำถามอาจารย์ & กล่าวขอบคุณ</span>
-                        </label>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Modal Footer -->
-            <div class="bg-[#f4f4f0] border-t-3 border-black p-4 flex justify-end">
-                <button onclick="closePresentationModal()" class="neo-btn bg-[#FF007A] text-white px-5 py-2 text-xs md:text-sm">
-                    ปิดหน้าต่างสคริปต์
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Live Site Preview Modal Frame -->
-    <div id="previewModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-2 sm:p-4 hidden">
-        <div class="neo-box bg-white w-full max-w-6xl h-[92vh] flex flex-col overflow-hidden">
-            
-            <!-- Window Title Bar -->
-            <div class="bg-[#FFE600] border-b-3 border-black p-3 flex items-center justify-between gap-2">
-                <div class="flex items-center gap-2">
-                    <!-- Fake Mac Window Controls -->
-                    <div class="w-3.5 h-3.5 rounded-full bg-[#FF007A] border border-black"></div>
-                    <div class="w-3.5 h-3.5 rounded-full bg-[#FFE600] border border-black"></div>
-                    <div class="w-3.5 h-3.5 rounded-full bg-[#A3FF12] border border-black"></div>
-                    <span class="font-black text-xs md:text-sm ml-2 truncate" id="previewTitle">Live Preview Window</span>
-                </div>
-
-                <!-- URL Bar Display -->
-                <div class="hidden sm:flex items-center gap-2 bg-white border-2 border-black px-3 py-1 text-xs font-mono w-1/2 truncate">
-                    <i class="fa-solid fa-lock text-green-600 text-[10px]"></i>
-                    <span id="previewUrlText" class="truncate">https://...</span>
-                </div>
-
-                <!-- Window Actions -->
-                <div class="flex items-center gap-2">
-                    <a id="previewExternalLink" href="#" target="_blank" class="neo-btn bg-white px-2.5 py-1 text-xs flex items-center gap-1" title="เปิดในแท็บใหม่">
-                        <span>เปิดเว็บเต็ม</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
-                    <button onclick="closePreviewModal()" class="neo-btn bg-[#FF007A] text-white w-7 h-7 flex items-center justify-center font-black">
-                        ✕
-                    </button>
-                </div>
-            </div>
-
-            <!-- Modal Frame Container -->
-            <div class="relative flex-grow bg-gray-100 overflow-hidden">
-                <div id="iframeLoader" class="absolute inset-0 flex flex-col items-center justify-center bg-white z-10">
-                    <div class="w-12 h-12 border-4 border-black border-t-[#FF007A] rounded-full animate-spin mb-3"></div>
-                    <p class="font-black text-sm">กำลังโหลดหน้าเว็บไซต์ตัวอย่าง...</p>
-                    <p class="text-xs text-gray-500 font-semibold mt-1">หากเว็บไซต์ไม่แสดงผล สามารถกดปุ่ม "เปิดเว็บเต็ม" ด้านบนได้ครับ</p>
-                </div>
-                <iframe id="previewIframe" src="" class="w-full h-full border-none" onload="hideIframeLoader()"></iframe>
-            </div>
-        </div>
-    </div>
-
-    <!-- Edit Project #5 Modal -->
-    <div id="editProj5Modal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
-        <div class="neo-box bg-white w-full max-w-lg p-6">
-            <div class="flex items-center justify-between border-b-3 border-black pb-3 mb-4">
-                <h3 class="font-black text-lg flex items-center gap-2">
-                    <span>✏️ อัปเดตข้อมูลชิ้นงานที่ 5</span>
-                </h3>
-                <button onclick="closeEditProj5Modal()" class="neo-btn bg-[#FF007A] text-white w-7 h-7 flex items-center justify-center">✕</button>
-            </div>
-
-            <form onsubmit="saveProj5Data(event)" class="space-y-4 text-xs sm:text-sm font-extrabold">
-                <div>
-                    <label class="block mb-1">ชื่อผลงาน / Project Title:</label>
-                    <input type="text" id="p5TitleInput" required class="w-full border-2 border-black p-2 bg-[#f4f4f0] focus:bg-white focus:outline-none" placeholder="เช่น Portfolio Project #5">
-                </div>
-                <div>
-                    <label class="block mb-1">URL ลิงก์เว็บไซต์ (https://...):</label>
-                    <input type="url" id="p5UrlInput" required class="w-full border-2 border-black p-2 bg-[#f4f4f0] focus:bg-white focus:outline-none" placeholder="https://teeranan88.github.io/my-new-project/">
-                </div>
-                <div>
-                    <label class="block mb-1">หมวดหมู่ (Category):</label>
-                    <select id="p5CatInput" class="w-full border-2 border-black p-2 bg-[#f4f4f0] focus:bg-white focus:outline-none">
-                        <option value="Web Apps">Web Apps</option>
-                        <option value="Google Sites">Google Sites</option>
-                        <option value="Games">Games</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block mb-1">คำอธิบายสั้นๆ (Description):</label>
-                    <textarea id="p5DescInput" rows="3" class="w-full border-2 border-black p-2 bg-[#f4f4f0] focus:bg-white focus:outline-none" placeholder="อธิบายรายละเอียดผลงานเทคโนโลยีที่ใช้..."></textarea>
-                </div>
-
-                <div class="flex items-center justify-end gap-2 pt-2 border-t-2 border-black">
-                    <button type="button" onclick="closeEditProj5Modal()" class="neo-btn bg-white px-4 py-2">ยกเลิก</button>
-                    <button type="submit" class="neo-btn bg-[#A3FF12] px-5 py-2">บันทึกชิ้นงาน</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Notification Toast Box -->
-    <div id="toastNotification" class="fixed bottom-5 right-5 z-50 neo-box bg-[#FFE600] px-4 py-3 font-black text-xs sm:text-sm flex items-center gap-3 translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
-        <span id="toastIcon">✨</span>
-        <span id="toastMessage">แจ้งเตือนสำเร็จ!</span>
-    </div>
-
-    <!-- Footer Section -->
-    <footer class="bg-black text-white border-t-4 border-black py-8 px-4 mt-12">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-            
+            <!-- Student Profile Info -->
             <div class="text-center md:text-left">
-                <div class="font-display font-black text-2xl tracking-wider text-[#FFE600]">
-                    TEERANAN PORTFOLIO HUB
+                <div class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white text-xs px-3 py-1.5 rounded-full font-medium shadow-md mb-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                    มหาวิทยาลัยนอร์ทกรุงเทพ (North Bangkok University)
                 </div>
-                <p class="text-xs font-semibold text-gray-400 mt-1">
-                    North Bangkok University • Faculty of Information Technology & Digital Innovation
+                <h1 class="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+                    ธีรนันท์ ม้าสุวรรณ
+                </h1>
+                <p class="text-sm md:text-base text-slate-500 font-normal mt-1">
+                    Teeranan Masuwan — Interactive Web Showcase & Academic Projects
                 </p>
             </div>
 
-            <div class="flex items-center gap-3 flex-wrap justify-center">
-                <a href="https://github.com/teeranan88" target="_blank" class="neo-btn bg-[#00E5FF] text-black px-3 py-1.5 text-xs flex items-center gap-1.5">
-                    <i class="fa-brands fa-github text-sm"></i>
-                    <span>teeranan88</span>
-                </a>
-                <button onclick="scrollToTop()" class="neo-btn bg-[#FF007A] text-white px-3 py-1.5 text-xs flex items-center gap-1.5">
-                    <i class="fa-solid fa-arrow-up"></i>
-                    <span>กลับขึ้นด้านบน</span>
-                </button>
+            <!-- Quick Badge -->
+            <div class="bg-white px-5 py-3 rounded-2xl shadow-lg border border-purple-100 text-center flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center font-bold text-lg">
+                    7
+                </div>
+                <div class="text-left">
+                    <p class="text-xs text-slate-400 font-medium">รวมผลงานทั้งหมด</p>
+                    <p class="text-sm font-bold text-slate-800">7 Projects Submitted</p>
+                </div>
             </div>
-        </div>
 
-        <div class="max-w-7xl mx-auto border-t border-gray-800 mt-6 pt-4 text-center text-[11px] text-gray-500 font-semibold">
-            Academic Web Design Showcase Project • Designed with Neo-Brutalism Style
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-6 mt-10">
+
+        <!-- Section Title -->
+        <div class="mb-8 text-center md:text-left">
+            <h2 class="text-2xl font-bold text-slate-800 flex items-center justify-center md:justify-start gap-2">
+                <span class="w-3 h-8 bg-gradient-to-b from-pink-500 to-purple-600 rounded-full inline-block"></span>
+                คลังรวมผลงานเว็บไซต์ (Project Collection)
+            </h2>
+            <p class="text-slate-500 text-sm mt-1">คลิกที่ปุ่มเพื่อเข้าชมเว็บไซต์และระบบงานจริงแต่ละชิ้น</p>
+        </div>
+        
+        <!-- Cards Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card 1: CRAFT YOUR TASTE -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                <div class="h-2 bg-gradient-to-r from-amber-500 to-amber-600"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-amber-50 text-amber-600 border border-amber-100">Google Sites</span>
+                        <span class="text-slate-300 text-xs font-mono">01</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 group-hover:text-amber-600 transition-colors">- CRAFT YOUR TASTE -</h3>
+                    <p class="text-slate-500 text-sm mt-2 leading-relaxed">
+                        สัมผัสสุนทรียภาพแห่งการดื่มเบียร์ เว็บไซต์นำเสนอเรื่องราว ศิลปะการหมัก และรสชาติอันเป็นเอกลักษณ์ของคราฟต์เบียร์
+                    </p>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="https://sites.google.com/northbkk.ac.th/teeranan02/home" target="_blank" 
+                       class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-medium py-2.5 rounded-xl transition-all shadow-md hover:shadow-lg">
+                        เข้าชมเว็บไซต์
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: Google Site Portfolio -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                <div class="h-2 bg-gradient-to-r from-pink-500 to-rose-500"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-pink-50 text-pink-600 border border-pink-100">Google Sites</span>
+                        <span class="text-slate-300 text-xs font-mono">02</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 group-hover:text-pink-600 transition-colors">Portfolio Site</h3>
+                    <p class="text-slate-500 text-sm mt-2 leading-relaxed">
+                        แฟ้มสะสมผลงานส่วนตัว รวบรวมประวัติ ผลงานโดดเด่น และสรุปภาพรวมการเรียนรู้ตลอดหลักสูตร
+                    </p>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="https://sites.google.com/northbkk.ac.th/teeranan/portfolio" target="_blank" 
+                       class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-medium py-2.5 rounded-xl transition-all shadow-md hover:shadow-lg">
+                        เข้าชมเว็บไซต์
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3: BMI App -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                <div class="h-2 bg-gradient-to-r from-emerald-400 to-teal-500"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-100">Web App</span>
+                        <span class="text-slate-300 text-xs font-mono">03</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">BMI Calculator</h3>
+                    <p class="text-slate-500 text-sm mt-2 leading-relaxed">
+                        เว็บแอปพลิเคชันคำนวณดัชนีมวลกาย ประมวลผลค่าสุขภาพและประเมินเกณฑ์สุขภาพแบบเรียลไทม์
+                    </p>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="https://teeranan88.github.io/bmi01/" target="_blank" 
+                       class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-medium py-2.5 rounded-xl transition-all shadow-md hover:shadow-lg">
+                        เปิดใช้งานแอป
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4: Open House -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                <div class="h-2 bg-gradient-to-r from-orange-400 to-red-500"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-orange-50 text-orange-600 border border-orange-100">Web Design</span>
+                        <span class="text-slate-300 text-xs font-mono">04</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 group-hover:text-orange-600 transition-colors">Open House Project</h3>
+                    <p class="text-slate-500 text-sm mt-2 leading-relaxed">
+                        เว็บไซต์ประชาสัมพันธ์กิจกรรม Open House นำเสนอไฮไลต์สาขาวิชาและข้อมูลการเปิดรับสมัคร
+                    </p>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="https://teeranan88.github.io/openhouse/" target="_blank" 
+                       class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-medium py-2.5 rounded-xl transition-all shadow-md hover:shadow-lg">
+                        เข้าชมเว็บไซต์
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 5: Web Game -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                <div class="h-2 bg-gradient-to-r from-purple-500 to-fuchsia-500"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-purple-50 text-purple-600 border border-purple-100">Interactive Game</span>
+                        <span class="text-slate-300 text-xs font-mono">05</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 group-hover:text-purple-600 transition-colors">Web Game Project</h3>
+                    <p class="text-slate-500 text-sm mt-2 leading-relaxed">
+                        มินิเกมบนเว็บไซต์ พัฒนาโดยเน้นตรรกะการควบคุม JavaScript และการตอบสนองผู้เล่นแบบ Interactive
+                    </p>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="https://teeranan88.github.io/game00/" target="_blank" 
+                       class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-fuchsia-600 hover:from-purple-600 hover:to-fuchsia-700 text-white font-medium py-2.5 rounded-xl transition-all shadow-md hover:shadow-lg">
+                        ทดลองเล่นเกม
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 6: Web ร้านอาหาร -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                <div class="h-2 bg-gradient-to-r from-blue-500 to-indigo-500"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-600 border border-blue-100">Web Design</span>
+                        <span class="text-slate-300 text-xs font-mono">06</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors">Web ร้านอาหาร</h3>
+                    <p class="text-slate-500 text-sm mt-2 leading-relaxed">
+                        เว็บไซต์นำเสนอร้านอาหาร ดีไซน์เมนูแนะนำ บรรยากาศร้าน และการบริการลูกค้าอย่างเป็นเอกลักษณ์
+                    </p>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="https://teeranan88.github.io/-00/" target="_blank" 
+                       class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium py-2.5 rounded-xl transition-all shadow-md hover:shadow-lg">
+                        เข้าชมเว็บไซต์
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 7: Animate Slider Gallery -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden group md:col-span-2 lg:col-span-1">
+                <div class="h-2 bg-gradient-to-r from-indigo-500 to-violet-600"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100">Interactive Gallery</span>
+                        <span class="text-slate-300 text-xs font-mono">07</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 group-hover:text-indigo-600 transition-colors">Animate Slider Gallery</h3>
+                    <p class="text-slate-500 text-sm mt-2 leading-relaxed">
+                        แกลเลอรีภาพเคลื่อนไหวแบบสไลเดอร์ โดดเด่นด้วยการสลับรูปภาพและเอฟเฟกต์แอนิเมชันสุดทันสมัย
+                    </p>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="https://teeranan88.github.io/-13/" target="_blank" 
+                       class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-medium py-2.5 rounded-xl transition-all shadow-md hover:shadow-lg">
+                        เข้าชมชิ้นงาน
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 text-center text-slate-400 text-sm">
+        <div class="max-w-6xl mx-auto px-6 pt-8 border-t border-purple-100/60">
+            <p class="font-medium text-slate-600">นางสาวธีรนันท์ ม้าสุวรรณ (Teeranan Masuwan)</p>
+            <p class="text-xs text-slate-400 mt-1">มหาวิทยาลัยนอร์ทกรุงเทพ • North Bangkok University</p>
         </div>
     </footer>
 
-    <script>
-        // Default Project Data Array (7 Complete Projects)
-        const initialProjects = [
-            {
-                id: 1,
-                title: "GOOGLE SITES HOME PAGE",
-                subtitle: "Personal Introductory Site",
-                url: "https://sites.google.com/northbkk.ac.th/teeranan02/home",
-                category: "Google Sites",
-                bgHex: "#00E5FF", // Bright Cyan
-                badgeBg: "#FFE600",
-                icon: "fa-solid fa-house-chimney",
-                desc: "เว็บไซต์หน้าแรกแนะนำตัว ประวัติส่วนตัว และภาพรวมการศึกษา ออกแบบและพัฒนาบนระบบ Google Sites ของมหาวิทยาลัย",
-                tech: ["Google Sites", "Web Design", "Academic Page"],
-                isEditable: false
-            },
-            {
-                id: 2,
-                title: "PORTFOLIO SHOWCASE",
-                subtitle: "Academic Portfolio Site",
-                url: "https://sites.google.com/northbkk.ac.th/teeranan/portfolio",
-                category: "Google Sites",
-                bgHex: "#A3FF12", // Lime Green
-                badgeBg: "#00E5FF",
-                icon: "fa-solid fa-briefcase",
-                desc: "คลังรวบรวมผลงานวิชาการ กิจกรรมในมหาวิทยาลัยนอร์ทกรุงเทพ และเกียรติบัตร จัดหมวดหมู่ให้อ่านง่ายส่งอาจารย์",
-                tech: ["Google Sites", "Portfolio Hub", "UI Layout"],
-                isEditable: false
-            },
-            {
-                id: 3,
-                title: "BMI CALCULATOR APP",
-                subtitle: "Health Index Application",
-                url: "https://teeranan88.github.io/bmi01/",
-                category: "Web Apps",
-                bgHex: "#FF007A", // Hot Pink
-                badgeBg: "#A3FF12",
-                icon: "fa-solid fa-calculator",
-                desc: "แอปพลิเคชันคำนวณดัชนีมวลกาย (BMI) ประมวลผลดัชนีสุขภาพเบื้องต้นแบบโต้ตอบเรียลไทม์ พร้อมเกณฑ์ประเมิน",
-                tech: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
-                isEditable: false
-            },
-            {
-                id: 4,
-                title: "NBU OPEN HOUSE WEBSITE",
-                subtitle: "University Event Portal",
-                url: "https://teeranan88.github.io/openhouse/",
-                category: "Web Apps",
-                bgHex: "#FFE600", // Bright Yellow
-                badgeBg: "#FF007A",
-                icon: "fa-solid fa-graduation-cap",
-                desc: "เว็บไซต์ประชาสัมพันธ์งานเปิดบ้าน North Bangkok Open House นำเสนอรายละเอียดซุ้มกิจกรรมและหลักสูตรสาขา",
-                tech: ["Web Development", "Event Landing", "GitHub Pages"],
-                isEditable: false
-            },
-            {
-                id: 5,
-                title: "PROJECT #05 (IN PROGRESS)",
-                subtitle: "Academic Work / Coming Soon",
-                url: "",
-                category: "In Progress",
-                bgHex: "#9D00FF", // Neon Purple
-                badgeBg: "#FFE600",
-                icon: "fa-solid fa-hammer",
-                desc: "ชิ้นงานที่ 5 อยู่ระหว่างการพัฒนา! สามารถคลิกปุ่ม 'ใส่ URL ชิ้นงาน' เพื่ออัปเดตลิงก์จริงส่งอาจารย์ได้ทันที",
-                tech: ["Work in Progress", "Editable Link"],
-                isEditable: true
-            },
-            {
-                id: 6,
-                title: "MINI GAME PROJECT",
-                subtitle: "Interactive Game Web App",
-                url: "https://teeranan88.github.io/game00/",
-                category: "Games",
-                bgHex: "#FF7A00", // Orange
-                badgeBg: "#00E5FF",
-                icon: "fa-solid fa-gamepad",
-                desc: "มินิเกมโต้ตอบ พัฒนาด้วย JavaScript ออกแบบระบบการเล่น ฟังก์ชันนับคะแนน และเอฟเฟกต์ภาพความบันเทิง",
-                tech: ["JavaScript Game", "Canvas / Logic", "GitHub Pages"],
-                isEditable: false
-            },
-            {
-                id: 7,
-                title: "PERSONAL PROJECT -13",
-                subtitle: "Experimental Application",
-                url: "https://teeranan88.github.io/-13/",
-                category: "Web Apps",
-                bgHex: "#00E5FF", // Electric Blue
-                badgeBg: "#FF007A",
-                icon: "fa-solid fa-code",
-                desc: "โปรเจกต์เว็บทดลองเฉพาะตัว (-13) เรียนรู้โครงสร้างเว็บแอปพลิเคชัน การจัดวางเลย์เอาต์ และการเขียนสคริปต์",
-                tech: ["Web App", "JavaScript", "GitHub Pages"],
-                isEditable: false
-            }
-        ];
-
-        let projects = [...initialProjects];
-        let currentCategory = 'ALL';
-        let searchQuery = '';
-        let soundEnabled = true;
-
-        // Presentation Timer Variables
-        let timerInterval = null;
-        let timerSeconds = 0;
-
-        // Load saved state from LocalStorage on load
-        window.addEventListener('DOMContentLoaded', () => {
-            loadSavedProj5Data();
-            renderProjects();
-            setupAudioContext();
-        });
-
-        // Sound FX System using Web Audio API
-        function playSound(type = 'click') {
-            if (!soundEnabled) return;
-            try {
-                const ctx = new (window.AudioContext || window.webkitAudioContext)();
-                const osc = ctx.createOscillator();
-                const gain = ctx.createGain();
-                
-                if (type === 'click') {
-                    osc.type = 'sine';
-                    osc.frequency.setValueAtTime(520, ctx.currentTime);
-                    osc.frequency.exponentialRampToValueAtTime(180, ctx.currentTime + 0.06);
-                    gain.gain.setValueAtTime(0.15, ctx.currentTime);
-                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.06);
-                    osc.connect(gain);
-                    gain.connect(ctx.destination);
-                    osc.start();
-                    osc.stop(ctx.currentTime + 0.06);
-                } else if (type === 'pop') {
-                    osc.type = 'triangle';
-                    osc.frequency.setValueAtTime(300, ctx.currentTime);
-                    osc.frequency.exponentialRampToValueAtTime(600, ctx.currentTime + 0.08);
-                    gain.gain.setValueAtTime(0.2, ctx.currentTime);
-                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.08);
-                    osc.connect(gain);
-                    gain.connect(ctx.destination);
-                    osc.start();
-                    osc.stop(ctx.currentTime + 0.08);
-                }
-            } catch(e) {}
-        }
-
-        function toggleSound() {
-            soundEnabled = !soundEnabled;
-            const btn = document.getElementById('soundToggleBtn');
-            const icon = document.getElementById('soundIcon');
-            
-            if (soundEnabled) {
-                icon.className = 'fa-solid fa-volume-high';
-                showToast('🔊 เสียงเอฟเฟกต์: เปิด');
-                playSound('pop');
-            } else {
-                icon.className = 'fa-solid fa-volume-xmark text-red-600';
-                showToast('🔇 เสียงเอฟเฟกต์: ปิด');
-            }
-        }
-
-        function setupAudioContext() {
-            document.body.addEventListener('click', () => {
-                // Initialize audio context on first user interaction
-            }, { once: true });
-        }
-
-        // Render Cards Grid Function
-        function renderProjects() {
-            const grid = document.getElementById('projectsGrid');
-            const emptyState = document.getElementById('emptyState');
-            
-            const filtered = projects.filter(p => {
-                const matchesCat = currentCategory === 'ALL' || p.category === currentCategory;
-                const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                                     p.desc.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                                     p.tech.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
-                return matchesCat && matchesSearch;
-            });
-
-            if (filtered.length === 0) {
-                grid.innerHTML = '';
-                emptyState.classList.remove('hidden');
-                return;
-            } else {
-                emptyState.classList.add('hidden');
-            }
-
-            grid.innerHTML = filtered.map(p => {
-                const isPurple = p.bgHex === '#9D00FF';
-                const textClass = isPurple ? 'text-white' : 'text-black';
-
-                return `
-                    <div class="neo-box neo-card-hover bg-white flex flex-col justify-between overflow-hidden relative group">
-                        
-                        <!-- Card Header Background Box -->
-                        <div class="p-5 border-b-3 border-black relative" style="background-color: ${p.bgHex}">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="bg-black text-white font-black text-[11px] px-2.5 py-1 uppercase border border-black shadow-[2px_2px_0px_#fff]">
-                                    PROJECT 0${p.id}
-                                </span>
-                                <span class="font-black text-xs px-2.5 py-1 border-2 border-black shadow-[2px_2px_0px_#000]" style="background-color: ${p.badgeBg}">
-                                    ${p.category}
-                                </span>
-                            </div>
-
-                            <div class="flex items-start gap-3 my-2">
-                                <div class="w-12 h-12 bg-white border-2 border-black flex items-center justify-center font-black text-xl shadow-[3px_3px_0px_#000] shrink-0">
-                                    <i class="${p.icon}"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-display font-black text-xl md:text-2xl leading-tight uppercase ${textClass}">
-                                        ${p.title}
-                                    </h3>
-                                    <p class="text-xs font-bold ${isPurple ? 'text-gray-200' : 'text-gray-800'} mt-0.5">
-                                        ${p.subtitle}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card Body Description -->
-                        <div class="p-5 flex-grow flex flex-col justify-between bg-white">
-                            <div>
-                                <p class="text-xs sm:text-sm font-semibold text-gray-800 leading-relaxed mb-4">
-                                    ${p.desc}
-                                </p>
-
-                                <!-- Tech Pills -->
-                                <div class="flex flex-wrap gap-1.5 mb-5">
-                                    ${p.tech.map(t => `
-                                        <span class="bg-[#f4f4f0] border border-black px-2 py-0.5 text-[10px] font-bold">
-                                            #${t}
-                                        </span>
-                                    `).join('')}
-                                </div>
-                            </div>
-
-                            <!-- Card Bottom Action Buttons -->
-                            <div class="pt-3 border-t-2 border-black space-y-2">
-                                ${p.url ? `
-                                    <div class="grid grid-cols-2 gap-2">
-                                        <button onclick="openPreviewModal('${p.url}', '${p.title}')" class="neo-btn bg-[#FFE600] py-2 px-2 text-xs flex items-center justify-center gap-1.5">
-                                            <i class="fa-solid fa-eye"></i>
-                                            <span>ดูตัวอย่าง Live</span>
-                                        </button>
-                                        <a href="${p.url}" target="_blank" onclick="playSound('click')" class="neo-btn bg-black text-white py-2 px-2 text-xs flex items-center justify-center gap-1.5">
-                                            <span>เปิดเว็บจริง</span>
-                                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                                        </a>
-                                    </div>
-                                    <button onclick="copyToClipboard('${p.url}')" class="w-full neo-btn bg-white py-1.5 text-[11px] text-gray-700 flex items-center justify-center gap-1">
-                                        <i class="fa-solid fa-copy"></i>
-                                        <span>คัดลอกลิงก์ (Copy URL)</span>
-                                    </button>
-                                ` : `
-                                    <button onclick="openEditProj5Modal()" class="w-full neo-btn bg-[#A3FF12] py-2.5 px-3 text-xs flex items-center justify-center gap-2">
-                                        <i class="fa-solid fa-plus-circle"></i>
-                                        <span>ใส่ URL ชิ้นงานที่ 5 ของคุณ</span>
-                                    </button>
-                                `}
-
-                                ${p.isEditable && p.url ? `
-                                    <button onclick="openEditProj5Modal()" class="w-full neo-btn bg-[#FFE600] py-1 text-[11px] flex items-center justify-center gap-1 mt-1">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        <span>แก้ไขลิงก์ชิ้นงานนี้</span>
-                                    </button>
-                                ` : ''}
-                            </div>
-
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        // Category Filter Controller
-        function filterCategory(cat) {
-            playSound('pop');
-            currentCategory = cat;
-            
-            // Update active state on buttons
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                if (btn.innerText.includes(cat) || (cat === 'ALL' && btn.innerText.includes('ทั้งหมด'))) {
-                    btn.className = 'filter-btn neo-btn bg-[#FFE600] text-black px-3.5 py-1.5 text-xs sm:text-sm active-filter';
-                } else {
-                    btn.className = 'filter-btn neo-btn bg-white text-black px-3.5 py-1.5 text-xs sm:text-sm';
-                }
-            });
-
-            renderProjects();
-        }
-
-        // Search Input Handler
-        function handleSearch() {
-            searchQuery = document.getElementById('searchInput').value;
-            renderProjects();
-        }
-
-        // Copy to Clipboard
-        function copyToClipboard(text) {
-            playSound('pop');
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(text);
-            } else {
-                const textarea = document.createElement('textarea');
-                textarea.value = text;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-            }
-            showToast('📋 คัดลอกลิงก์ไปยังคลิปบอร์ดแล้ว!');
-        }
-
-        // Toast Notification System
-        function showToast(msg, icon = '✨') {
-            const toast = document.getElementById('toastNotification');
-            document.getElementById('toastMessage').innerText = msg;
-            document.getElementById('toastIcon').innerText = icon;
-
-            toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
-            
-            setTimeout(() => {
-                toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
-            }, 3000);
-        }
-
-        // Live Preview Modal Functions
-        function openPreviewModal(url, title) {
-            playSound('pop');
-            const modal = document.getElementById('previewModal');
-            const iframe = document.getElementById('previewIframe');
-            const loader = document.getElementById('iframeLoader');
-            
-            document.getElementById('previewTitle').innerText = title;
-            document.getElementById('previewUrlText').innerText = url;
-            document.getElementById('previewExternalLink').href = url;
-
-            loader.style.display = 'flex';
-            iframe.src = url;
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function hideIframeLoader() {
-            document.getElementById('iframeLoader').style.display = 'none';
-        }
-
-        function closePreviewModal() {
-            playSound('click');
-            const modal = document.getElementById('previewModal');
-            const iframe = document.getElementById('previewIframe');
-            iframe.src = '';
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Presentation Modal Functions
-        function openPresentationModal() {
-            playSound('pop');
-            document.getElementById('presentationModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closePresentationModal() {
-            playSound('click');
-            document.getElementById('presentationModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        function editStudentInfo() {
-            const name = prompt("ป้อนชื่อ-นามสกุล ของคุณ:", "นายธีรนันท์");
-            if (name) {
-                document.getElementById('scriptStudentName').innerText = name + ' (TEERANAN)';
-                showToast('อัปเดตข้อมูลนักศึกษาเรียบร้อย!');
-            }
-        }
-
-        // Presentation Timer Logic
-        function startTimer() {
-            playSound('click');
-            if (timerInterval) return;
-            timerInterval = setInterval(() => {
-                timerSeconds++;
-                updateTimerDisplay();
-            }, 1000);
-        }
-
-        function pauseTimer() {
-            playSound('click');
-            clearInterval(timerInterval);
-            timerInterval = null;
-        }
-
-        function resetTimer() {
-            playSound('click');
-            pauseTimer();
-            timerSeconds = 0;
-            updateTimerDisplay();
-        }
-
-        function updateTimerDisplay() {
-            const mins = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
-            const secs = (timerSeconds % 60).toString().padStart(2, '0');
-            document.getElementById('timerDisplay').innerText = `${mins}:${secs}`;
-        }
-
-        // Edit Project 5 Modal Logic
-        function openEditProj5Modal() {
-            playSound('pop');
-            const proj5 = projects.find(p => p.id === 5);
-            if (proj5) {
-                document.getElementById('p5TitleInput').value = proj5.title.includes('IN PROGRESS') ? '' : proj5.title;
-                document.getElementById('p5UrlInput').value = proj5.url;
-                document.getElementById('p5CatInput').value = proj5.category === 'In Progress' ? 'Web Apps' : proj5.category;
-                document.getElementById('p5DescInput').value = proj5.desc.includes('กำลังพัฒนา') ? '' : proj5.desc;
-            }
-            document.getElementById('editProj5Modal').classList.remove('hidden');
-        }
-
-        function closeEditProj5Modal() {
-            playSound('click');
-            document.getElementById('editProj5Modal').classList.add('hidden');
-        }
-
-        function saveProj5Data(e) {
-            e.preventDefault();
-            playSound('pop');
-
-            const title = document.getElementById('p5TitleInput').value;
-            const url = document.getElementById('p5UrlInput').value;
-            const category = document.getElementById('p5CatInput').value;
-            const desc = document.getElementById('p5DescInput').value;
-
-            const index = projects.findIndex(p => p.id === 5);
-            if (index !== -1) {
-                projects[index].title = title || "PROJECT #05";
-                projects[index].url = url;
-                projects[index].category = category;
-                projects[index].desc = desc || "ผลงานวิชาการชิ้นที่ 5 พัฒนาและนำขึ้นระบบเรียบร้อยแล้ว";
-                projects[index].bgHex = "#9D00FF";
-                projects[index].icon = "fa-solid fa-laptop-code";
-                
-                // Save to localStorage
-                localStorage.setItem('teeranan_proj5_data', JSON.stringify(projects[index]));
-                
-                renderProjects();
-                closeEditProj5Modal();
-                showToast('🎉 บันทึกชิ้นงานที่ 5 สำเร็จแล้ว!');
-            }
-        }
-
-        function loadSavedProj5Data() {
-            const saved = localStorage.getItem('teeranan_proj5_data');
-            if (saved) {
-                try {
-                    const parsed = JSON.parse(saved);
-                    const index = projects.findIndex(p => p.id === 5);
-                    if (index !== -1) {
-                        projects[index] = { ...projects[index], ...parsed };
-                    }
-                } catch(e) {}
-            }
-        }
-
-        // Scroll Helpers
-        function scrollToProjects() {
-            playSound('click');
-            document.getElementById('projects-section').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function scrollToTop() {
-            playSound('click');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
 </body>
 </html>
